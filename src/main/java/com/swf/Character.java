@@ -10,4 +10,5 @@ public interface Character {
     int calculateMagicDamageTaken(Random rand, int magicDamage);
     void calculateHealth(int damage);
     int getHealth();
+    String className();
 }

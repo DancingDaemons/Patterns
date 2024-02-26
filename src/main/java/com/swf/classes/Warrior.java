@@ -69,6 +69,10 @@ public class Warrior implements Character {
         if (health < 0){
             health = 0;
         }
-        System.out.println("Health: " + health);
+    }
+
+    @Override
+    public String className() {
+        return Warrior.class.getSimpleName();
     }
 }

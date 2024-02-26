@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Optional;
 import java.util.Random;
 
 @Getter
@@ -70,6 +71,9 @@ public class Paladin implements Character {
         if (health < 0){
             health = 0;
         }
-        System.out.println("Health: " + health);
+    }
+    @Override
+    public String className() {
+        return Paladin.class.getSimpleName();
     }
 }

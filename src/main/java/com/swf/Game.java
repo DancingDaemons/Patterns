@@ -33,22 +33,22 @@ public class Game {
 
         Random random = new Random();
         while (player1.getHealth() > 0 && opponent.getHealth() > 0) {
-            String character1 = Mage.class.getSimpleName();
-            String character2 = Warrior.class.getSimpleName();
-            System.out.println(character2 + "'s attacks!");
+            String character1 = player1.className();
+            String character2 = opponent.className();
+            System.out.println(character1 + "'s attacks!");
             int physicalDamage = player1.calculatePhysicalDamage(random);
             int magicDamage = player1.calculateMagicDamage(random);
             int physicalDamageTaken = opponent.calculatePhysicalDamageTaken(random, physicalDamage);
             int magicDamageTaken = opponent.calculateMagicDamageTaken(random, magicDamage);
-            System.out.println(character2 + " deals " + physicalDamageTaken + " physical damage and "+ magicDamageTaken + " magic damage");
+            System.out.println(character1 + " deals " + physicalDamageTaken + " physical damage and "+ magicDamageTaken + " magic damage");
             opponent.calculateHealth(physicalDamageTaken + magicDamageTaken);
             if(opponent.getHealth() == 0) break;
-            System.out.println(character1 + "'s attacks!");
+            System.out.println(character2 + "'s attacks!");
             physicalDamage = opponent.calculatePhysicalDamage(random);
             magicDamage = opponent.calculateMagicDamage(random);
             physicalDamageTaken = player1.calculatePhysicalDamageTaken(random, physicalDamage);
             magicDamageTaken = player1.calculateMagicDamageTaken(random, magicDamage);
-            System.out.println(character1 + " deals " + physicalDamageTaken + " physical damage and "+ magicDamageTaken + " magic damage");
+            System.out.println(character2 + " deals " + physicalDamageTaken + " physical damage and "+ magicDamageTaken + " magic damage");
             player1.calculateHealth(physicalDamageTaken + magicDamageTaken);
         }
 
