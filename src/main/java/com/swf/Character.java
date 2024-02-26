@@ -9,4 +9,5 @@ public interface Character {
     int calculatePhysicalDamageTaken(Random rand, int physicalDamage);
     int calculateMagicDamageTaken(Random rand, int magicDamage);
     void calculateHealth(int damage);
+    int getHealth();
 }
