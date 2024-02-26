@@ -57,7 +57,6 @@ public class CharacterType implements Character {
         if (health < 0){
             health = 0;
         }
-        System.out.println("Health: " + health);
     }
 
     public void levelUp() {
@@ -69,5 +68,9 @@ public class CharacterType implements Character {
         this.magicResistance += 0.01f;
         this.critChance += 0.5f;
         this.dodgeChance += 0.5f;
+    }
+
+    public String className() {
+        return null;
     }
 }

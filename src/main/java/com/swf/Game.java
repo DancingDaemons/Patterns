@@ -1,5 +1,6 @@
 package com.swf;
 
+import com.swf.classes.Character;
 import com.swf.classes.Mage;
 import com.swf.classes.Warrior;
 
@@ -22,42 +23,42 @@ public class Game {
             }
         } while (userInput < 1 || userInput > 5);
 
-
-        runGame();
+        runGame(userInput);
     }
 
-    public void runGame(){
+    public void runGame(int characterType){
         System.out.println("Starting Game");
-        Warrior warrior = new Warrior(1, 140, 40, 0, 0.4f, 0.1f, 5f, 5f);
-        Mage mage = new Mage(1, 70, 0, 30, 0.0f, 0.4f, 7.5f, 2.5f);
+        CharacterFactory characterFactory = new CharacterFactory();
+        Character player1 = characterFactory.characterCreation(characterType);
+        Mage mage = characterFactory.createMage();
 
         Random random = new Random();
-        while (warrior.getHealth() > 0 && mage.getHealth() > 0) {
-            String character1 = Mage.class.getSimpleName();
-            String character2 = Warrior.class.getSimpleName();
-            System.out.println(character2 + "'s attacks!");
-            int physicalDamage = warrior.calculatePhysicalDamage(random);
-            int magicDamage = warrior.calculateMagicDamage(random);
+        while (player1.getHealth() > 0 && mage.getHealth() > 0) {
+            String character1 = player1.className();
+            String character2 = mage.className();
+            System.out.println(character1 + "'s attacks!");
+            int physicalDamage = player1.calculatePhysicalDamage(random);
+            int magicDamage = player1.calculateMagicDamage(random);
             int physicalDamageTaken = mage.calculatePhysicalDamageTaken(random, physicalDamage);
             int magicDamageTaken = mage.calculateMagicDamageTaken(random, magicDamage);
-            System.out.println(character2 + " deals " + physicalDamageTaken + " physical damage and "+ magicDamageTaken + " magic damage");
+            System.out.println(character1 + " deals " + physicalDamageTaken + " physical damage and "+ magicDamageTaken + " magic damage");
             mage.calculateHealth(physicalDamageTaken + magicDamageTaken);
             if(mage.getHealth() == 0) break;
-            System.out.println(character1 + "'s attacks!");
+            System.out.println(character2 + "'s attacks!");
             physicalDamage = mage.calculatePhysicalDamage(random);
             magicDamage = mage.calculateMagicDamage(random);
-            physicalDamageTaken = warrior.calculatePhysicalDamageTaken(random, physicalDamage);
-            magicDamageTaken = warrior.calculateMagicDamageTaken(random, magicDamage);
-            System.out.println(character1 + " deals " + physicalDamageTaken + " physical damage and "+ magicDamageTaken + " magic damage");
-            warrior.calculateHealth(physicalDamageTaken + magicDamageTaken);
+            physicalDamageTaken = player1.calculatePhysicalDamageTaken(random, physicalDamage);
+            magicDamageTaken = player1.calculateMagicDamageTaken(random, magicDamage);
+            System.out.println(character2 + " deals " + physicalDamageTaken + " physical damage and "+ magicDamageTaken + " magic damage");
+            player1.calculateHealth(physicalDamageTaken + magicDamageTaken);
         }
 
-        if (warrior.getHealth() <= 0) {
-            System.out.println("Mage wins!");
-            mage.levelUp();
+        if (player1.getHealth() > 0) {
+            System.out.println("You win!");
+            player1.levelUp();
         } else {
-            System.out.println("Warrior wins!");
-            warrior.levelUp();
+            System.out.println("You lose!");
+            mage.levelUp();
         }
     }
 }

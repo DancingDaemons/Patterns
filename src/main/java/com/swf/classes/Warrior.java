@@ -4,6 +4,10 @@ public class Warrior extends CharacterType {
     public Warrior(int level, int health, int physicalDamage, int magicDamage, float armor, float magicResistance, float critChance, float dodgeChance) {
         super(level, health, physicalDamage, magicDamage, armor, magicResistance, critChance, dodgeChance);
     }
+    @Override
+    public String className(){
+        return Warrior.class.getSimpleName();
+    }
 
     @Override
     public void levelUp(){

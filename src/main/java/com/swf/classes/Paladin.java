@@ -5,7 +5,10 @@ public class Paladin extends CharacterType {
     public Paladin(int level, int health, int physicalDamage, int magicDamage, float armor, float magicResistance, float critChance, float dodgeChance) {
         super(level, health, physicalDamage, magicDamage, armor, magicResistance, critChance, dodgeChance);
     }
-
+    @Override
+    public String className(){
+        return Paladin.class.getSimpleName();
+    }
     @Override
     public void levelUp(){
         this.level++;

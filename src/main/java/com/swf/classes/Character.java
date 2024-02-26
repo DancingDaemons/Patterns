@@ -7,6 +7,8 @@ public interface Character {
     int calculateMagicDamage(Random rand);
     int calculatePhysicalDamageTaken(Random rand, int physicalDamage);
     int calculateMagicDamageTaken(Random rand, int magicDamage);
-    public void calculateHealth(int damage);
+    void calculateHealth(int damage);
     void levelUp();
+    int getHealth();
+    String className();
 }
