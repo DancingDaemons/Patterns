@@ -22,14 +22,13 @@ public class Game {
             }
         } while (userInput < 1 || userInput > 5);
 
-        runGame();
-    }
-
-    public void runGame(){
         System.out.println("Starting Game");
         Warrior warrior = new Warrior(1, 140, 40, 0, 0.4f, 0.1f, 5f, 5f);
         Mage mage = new Mage(1, 70, 0, 30, 0.0f, 0.4f, 7.5f, 2.5f);
+        runGame(warrior, mage);
+    }
 
+    public void runGame(Warrior warrior, Mage mage){
         Random random = new Random();
         while (warrior.getHealth() > 0 && mage.getHealth() > 0) {
             String character1 = Mage.class.getSimpleName();
@@ -51,12 +50,12 @@ public class Game {
             warrior.calculateHealth(physicalDamageTaken + magicDamageTaken);
         }
 
-        if (warrior.getHealth() <= 0) {
-            System.out.println("Mage wins!");
-            mage.levelUp();
-        } else {
-            System.out.println("Warrior wins!");
+        if (warrior.getHealth() > 0) {
+            System.out.println("You win!");
             warrior.levelUp();
+        } else {
+            System.out.println("You lose!");
+            mage.levelUp();
         }
     }
 }
