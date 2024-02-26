@@ -1,23 +1,10 @@
 package com.swf.classes;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+public class Paladin extends Character{
 
-import java.util.Random;
-
-@Getter
-@Setter
-@AllArgsConstructor
-public class Paladin {
-    private int level = 1;
-    private int health = 120;
-    private int physicalDamage = 20;
-    private int magicDamage = 20;
-    private float armor = 0.3f;
-    private float magicResistance = 0.3f;
-    private float critChance = 5f;
-    private float dodgeChance = 5f;
+    public Paladin(int level, int health, int physicalDamage, int magicDamage, float armor, float magicResistance, float critChance, float dodgeChance) {
+        super(level, health, physicalDamage, magicDamage, armor, magicResistance, critChance, dodgeChance);
+    }
 
     public void levelUp(){
         this.level++;
@@ -28,47 +15,5 @@ public class Paladin {
         this.magicResistance += 0.01f;
         this.critChance += 0.5f;
         this.dodgeChance += 0.5f;
-    }
-
-    public int calculatePhysicalDamage(Random rand){
-        int damage = physicalDamage;
-        if (rand.nextFloat()*100 <= critChance){
-            System.out.println("Critical hit!");
-            damage *= 2;
-        }
-        return damage;
-    }
-
-    public int calculateMagicDamage(Random rand){
-        int damage = magicDamage;
-        if (rand.nextFloat()*100 <= critChance){
-            System.out.println("Critical hit!");
-            damage *= 2;
-        }
-        return damage;
-    }
-
-    public int calculatePhysicalDamageTaken(Random rand, int physicalDamage){
-        int damageTaken = 0;
-        if (rand.nextFloat()*100 <= dodgeChance){
-            System.out.println("Dodge!");
-            return damageTaken;
-        }
-        return (int) (physicalDamage - physicalDamage*armor);
-    }
-    public int calculateMagicDamageTaken(Random rand, int magicDamage){
-        int damageTaken = 0;
-        if (rand.nextFloat()*100 <= dodgeChance){
-            System.out.println("Dodge!");
-            return damageTaken;
-        }
-        return (int) (magicDamage - magicDamage*magicResistance);
-    }
-    public void calculateHealth(int damage){
-        health -= damage;
-        if (health < 0){
-            health = 0;
-        }
-        System.out.println("Health: " + health);
     }
 }
