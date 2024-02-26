@@ -1,5 +1,6 @@
 package com.swf.classes;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,6 +8,7 @@ import java.util.Random;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class Hunter {
     private int level = 1;
     private int health = 100;

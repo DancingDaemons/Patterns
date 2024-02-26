@@ -1,5 +1,6 @@
 package com.swf.classes;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,15 +8,16 @@ import java.util.Random;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class Mage {
-    private int level = 1;
-    private int health = 70;
-    private int physicalDamage = 0;
-    private int magicDamage = 30;
-    private float armor = 0.0f;
-    private float magicResistance = 0.4f;
-    private float critChance = 7.5f;
-    private float dodgeChance = 2.5f;
+    private int level;
+    private int health;
+    private int physicalDamage;
+    private int magicDamage;
+    private float armor;
+    private float magicResistance;
+    private float critChance;
+    private float dodgeChance;
 
     public void levelUp(){
         this.level++;

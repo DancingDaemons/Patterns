@@ -27,8 +27,8 @@ public class Game {
 
     public void runGame(){
         System.out.println("Starting Game");
-        Warrior warrior = new Warrior();
-        Mage mage = new Mage();
+        Warrior warrior = new Warrior(1, 140, 40, 0, 0.4f, 0.1f, 5f, 5f);
+        Mage mage = new Mage(1, 70, 0, 30, 0.0f, 0.4f, 7.5f, 2.5f);
 
         Random random = new Random();
         while (warrior.getHealth() > 0 && mage.getHealth() > 0) {
