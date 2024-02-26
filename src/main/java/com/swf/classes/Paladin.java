@@ -6,6 +6,7 @@ public class Paladin extends CharacterType {
         super(level, health, physicalDamage, magicDamage, armor, magicResistance, critChance, dodgeChance);
     }
 
+    @Override
     public void levelUp(){
         this.level++;
         this.health += 5;

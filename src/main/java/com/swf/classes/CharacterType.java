@@ -9,7 +9,7 @@ import java.util.Random;
 @Getter
 @Setter
 @AllArgsConstructor
-public class CharacterType {
+public class CharacterType implements Character {
     protected int level;
     protected int health;
     protected int physicalDamage;
@@ -58,5 +58,16 @@ public class CharacterType {
             health = 0;
         }
         System.out.println("Health: " + health);
+    }
+
+    public void levelUp() {
+        this.level++;
+        this.health += 1;
+        this.physicalDamage += 1;
+        this.magicDamage += 1;
+        this.armor += 0.01f;
+        this.magicResistance += 0.01f;
+        this.critChance += 0.5f;
+        this.dodgeChance += 0.5f;
     }
 }
