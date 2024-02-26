@@ -1,5 +1,7 @@
 package com.swf.classes;
 
+import com.swf.Character;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,15 +9,16 @@ import java.util.Random;
 
 @Getter
 @Setter
-public class Hunter {
-    private int level = 1;
-    private int health = 100;
-    private int physicalDamage = 30;
-    private int magicDamage = 30;
-    private float armor = 0.2f;
-    private float magicResistance = 0.2f;
-    private float critChance = 10f;
-    private float dodgeChance = 5f;
+@AllArgsConstructor
+public class Hunter implements Character {
+    private int level;
+    private int health;
+    private int physicalDamage;
+    private int magicDamage;
+    private float armor;
+    private float magicResistance;
+    private float critChance;
+    private float dodgeChance;
 
     public void levelUp(){
         this.level++;
