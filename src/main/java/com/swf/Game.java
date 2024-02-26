@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class Game {
 
     public void initializeGame(){
-
         System.out.println(new StringBuilder().append("Character selection: \n").append("1. Warrior \n").append("2. Mage \n").append("3. Rogue \n").append("4. Paladin \n").append("5. Hunter \n"));
         Scanner scanner = new Scanner(System.in);
         int userInput;
@@ -23,6 +22,10 @@ public class Game {
         } while (userInput < 1 || userInput > 5);
 
         System.out.println("Starting Game");
+
+        //Tight coupling between Game with Warrior and Mage
+        //If I want to have multiple classes of differing types what needs to be done?
+        //Let's assume these objects have parameters that are configured at runtime, what then?
         Warrior warrior = new Warrior(1, 140, 40, 0, 0.4f, 0.1f, 5f, 5f);
         Mage mage = new Mage(1, 70, 0, 30, 0.0f, 0.4f, 7.5f, 2.5f);
         runGame(warrior, mage);
