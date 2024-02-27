@@ -1,4 +1,4 @@
-package com.swf.classes;
+package com.swf.characterClasses;
 
 
 public class Mage extends CharacterType {
