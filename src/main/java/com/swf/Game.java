@@ -1,7 +1,7 @@
 package com.swf;
 
-import com.swf.classes.Mage;
-import com.swf.classes.Warrior;
+import com.swf.characterClasses.Mage;
+import com.swf.characterClasses.Warrior;
 
 import java.util.Random;
 import java.util.Scanner;

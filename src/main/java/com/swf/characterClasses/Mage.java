@@ -1,4 +1,4 @@
-package com.swf.classes;
+package com.swf.characterClasses;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,24 +9,22 @@ import java.util.Random;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Paladin {
-    private int level = 1;
-    private int health = 120;
-    private int physicalDamage = 20;
-    private int magicDamage = 20;
-    private float armor = 0.3f;
-    private float magicResistance = 0.3f;
-    private float critChance = 5f;
-    private float dodgeChance = 5f;
+public class Mage {
+    private int level;
+    private int health;
+    private int physicalDamage;
+    private int magicDamage;
+    private float armor;
+    private float magicResistance;
+    private float critChance;
+    private float dodgeChance;
 
     public void levelUp(){
         this.level++;
-        this.health += 5;
-        this.physicalDamage += 2;
-        this.magicDamage += 2;
-        this.armor += 0.01f;
+        this.health += 4;
+        this.magicDamage += 7;
         this.magicResistance += 0.01f;
-        this.critChance += 0.5f;
+        this.critChance += 1f;
         this.dodgeChance += 0.5f;
     }
 
