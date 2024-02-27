@@ -1,6 +1,7 @@
 package com.swf;
 
-import com.swf.classes.*;
+import com.swf.characterClasses.*;
+import com.swf.characterClasses.Character;
 
 public class CharacterFactory {
 

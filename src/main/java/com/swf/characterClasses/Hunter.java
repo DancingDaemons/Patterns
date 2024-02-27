@@ -1,17 +1,15 @@
-package com.swf.classes;
+package com.swf.characterClasses;
 
-import com.swf.Character;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Optional;
 import java.util.Random;
 
 @Getter
 @Setter
 @AllArgsConstructor
-public class Paladin implements Character {
+public class Hunter implements Character {
     private int level;
     private int health;
     private int physicalDamage;
@@ -26,7 +24,7 @@ public class Paladin implements Character {
         this.health += 5;
         this.physicalDamage += 2;
         this.magicDamage += 2;
-        this.armor += 0.01f;
+        this.armor += 0.02f;
         this.magicResistance += 0.01f;
         this.critChance += 0.5f;
         this.dodgeChance += 0.5f;
@@ -74,6 +72,6 @@ public class Paladin implements Character {
     }
     @Override
     public String className() {
-        return Paladin.class.getSimpleName();
+        return Hunter.class.getSimpleName();
     }
 }

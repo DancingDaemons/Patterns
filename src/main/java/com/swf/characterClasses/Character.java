@@ -1,4 +1,4 @@
-package com.swf;
+package com.swf.characterClasses;
 
 import java.util.Random;
 

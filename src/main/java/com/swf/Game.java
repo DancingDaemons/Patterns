@@ -1,5 +1,7 @@
 package com.swf;
 
+import com.swf.characterClasses.Character;
+
 import java.util.Random;
 import java.util.Scanner;
 

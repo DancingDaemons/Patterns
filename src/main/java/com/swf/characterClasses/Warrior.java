@@ -1,6 +1,5 @@
-package com.swf.classes;
+package com.swf.characterClasses;
 
-import com.swf.Character;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
