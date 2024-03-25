@@ -3,12 +3,12 @@ package com.swf.characterClasses;
 
 public class Mage extends CharacterType {
 
-    public Mage(int level, int health, int physicalDamage, int magicDamage, float armor, float magicResistance, float critChance, float dodgeChance) {
-        super(level, health, physicalDamage, magicDamage, armor, magicResistance, critChance, dodgeChance, Rogue.class.getSimpleName());
+    public Mage() {
+        super(1, 70, 0, 30, 0.0f, 0.4f, 7.5f, 2.5f, Rogue.class.getSimpleName());
     }
     @Override
     public String className(){
-        return Rogue.class.getSimpleName();
+        return Mage.class.getSimpleName();
     }
     @Override
     public void levelUp(){

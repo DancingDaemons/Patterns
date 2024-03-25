@@ -1,9 +1,11 @@
 package com.swf.characterClasses;
 
 public class Warrior extends CharacterType {
-    public Warrior(int level, int health, int physicalDamage, int magicDamage, float armor, float magicResistance, float critChance, float dodgeChance) {
-        super(level, health, physicalDamage, magicDamage, armor, magicResistance, critChance, dodgeChance, Warrior.class.getSimpleName());
+
+    public Warrior(){
+        super(1, 140, 40, 0, 0.4f, 0.1f, 5f, 5f,  Warrior.class.getSimpleName());
     }
+
     @Override
     public String className(){
         return Warrior.class.getSimpleName();

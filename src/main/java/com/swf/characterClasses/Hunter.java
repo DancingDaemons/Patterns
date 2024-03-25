@@ -2,8 +2,8 @@ package com.swf.characterClasses;
 
 
 public class Hunter extends CharacterType {
-    public Hunter(int level, int health, int physicalDamage, int magicDamage, float armor, float magicResistance, float critChance, float dodgeChance) {
-        super(level, health, physicalDamage, magicDamage, armor, magicResistance, critChance, dodgeChance, Hunter.class.getSimpleName());
+    public Hunter() {
+        super(1, 100, 30, 30, 0.2f, 0.2f, 10f, 5f, Hunter.class.getSimpleName());
     }
     @Override
     public String className(){

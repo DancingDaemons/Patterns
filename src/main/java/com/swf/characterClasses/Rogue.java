@@ -2,8 +2,8 @@ package com.swf.characterClasses;
 
 public class Rogue extends CharacterType {
 
-    public Rogue(int level, int health, int physicalDamage, int magicDamage, float armor, float magicResistance, float critChance, float dodgeChance) {
-        super(level, health, physicalDamage, magicDamage, armor, magicResistance, critChance, dodgeChance, Rogue.class.getSimpleName());
+    public Rogue() {
+        super(1, 90, 40, 20, 0.1f, 0.1f, 15f, 10f, Rogue.class.getSimpleName());
     }
     @Override
     public String className(){

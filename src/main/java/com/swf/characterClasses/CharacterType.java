@@ -1,16 +1,13 @@
 package com.swf.characterClasses;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Random;
 
 @Getter
 @Setter
-@Builder
 @AllArgsConstructor
+@Builder
 public class CharacterType implements Character {
     protected int level;
     protected int health;

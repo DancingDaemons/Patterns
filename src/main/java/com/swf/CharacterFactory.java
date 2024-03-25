@@ -17,22 +17,23 @@ public class CharacterFactory {
     }
 
     public Warrior createWarrior() {
-        return new Warrior(1, 140, 40, 0, 0.4f, 0.1f, 5f, 5f);
+
+        return (Warrior) Warrior.builder().build();
     }
 
     public Paladin createPaladin() {
-        return new Paladin(1, 120, 20, 20, 0.3f, 0.3f, 5f, 5f);
+        return (Paladin) Paladin.builder().build();
     }
 
     public Hunter createHunter() {
-        return new Hunter(1, 100, 30, 30, 0.2f, 0.2f, 10f, 5f);
+        return (Hunter) Hunter.builder().build();
     }
 
     public Rogue createRogue() {
-        return new Rogue(1, 90, 40, 20, 0.1f, 0.1f, 15f, 10f);
+        return (Rogue) Rogue.builder().build();
     }
 
     public Mage createMage() {
-        return new Mage(1, 70, 0, 30, 0.0f, 0.4f, 7.5f, 2.5f);
+        return (Mage) Mage.builder().build();
     }
 }
