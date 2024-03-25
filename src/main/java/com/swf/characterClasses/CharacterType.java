@@ -1,6 +1,7 @@
 package com.swf.characterClasses;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import java.util.Random;
 
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 public class CharacterType implements Character {
     protected int level;
@@ -18,6 +20,7 @@ public class CharacterType implements Character {
     protected float magicResistance;
     protected float critChance;
     protected float dodgeChance;
+    private String className;
     public int calculatePhysicalDamage(Random rand){
         int damage = physicalDamage;
         if (rand.nextFloat()*100 <= critChance){
@@ -71,6 +74,6 @@ public class CharacterType implements Character {
     }
 
     public String className() {
-        return null;
+        return className;
     }
 }
